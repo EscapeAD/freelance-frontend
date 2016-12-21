@@ -7,6 +7,7 @@ selector: 'documents',
 templateUrl: 'documents.component.html'
 })
 export class DocumentsComponent {
+  pageTitle: string = 'Docs Page'
   documents: Document[] = [
     {
       title: "This is a Test",
