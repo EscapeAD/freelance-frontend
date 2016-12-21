@@ -1,1 +1,5 @@
-<p> Proposal</p>
+<h1>Proposal List</h1>
+
+<div *ngFor='let pro of proposals'>
+  {{ pro.id }} - {{ pro.customer }} - {{ pro.client_email }}
+</div>
