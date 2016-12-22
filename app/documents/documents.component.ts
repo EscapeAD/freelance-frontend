@@ -12,23 +12,23 @@ export class DocumentsComponent {
     {
       title: "This is a Test",
       description: "Test data",
-      file_url: "www.google.com",
+      file_url: "http://www.google.com",
       updated_at: "01/01/1010",
-      image_url: "www.google.com"
+      image_url: "https://placekitten.com/g/300/200"
     },
     {
       title: "DOc 2",
       description: "Test data",
-      file_url: "www.google.com",
+      file_url: "http://www.google.com",
       updated_at: "01/01/1010",
-      image_url: "www.google.com"
+      image_url: "https://placekitten.com/g/300/200"
     },
     {
       title: "Test Doc 3",
       description: "Test data",
-      file_url: "www.google.com",
+      file_url: "http://www.google.com",
       updated_at: "01/01/1010",
-      image_url: "www.google.com"
+      image_url: "https://placekitten.com/g/300/200"
     }
   ]
 
