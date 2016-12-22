@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ProposalListComponent } from './proposal/proposal-list.component';
 import { ProposalNewComponent } from './proposal/proposal-new.component';
+import { ProposalShowComponent } from './proposal/proposal-show.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [ BrowserModule, AppRoutingModule, FormsModule ],
-  declarations: [ AppComponent, HomepageComponent, DocumentsComponent, ProposalListComponent, ProposalNewComponent ],
+  declarations: [ AppComponent, HomepageComponent, DocumentsComponent, ProposalListComponent, ProposalNewComponent, ProposalShowComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
