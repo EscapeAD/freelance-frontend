@@ -20,10 +20,10 @@ export class DocumentsComponent implements OnInit {
   ){}
 
   ngOnInit(){
-    // let timer = Observable.timer(0, 5000);
-    // timer.subscribe(() => this.getDocuments())
+    let timer = Observable.timer(0, 5000);
+    timer.subscribe(() => this.getDocuments())
     // temp data currently dynamic picture issue
-    this.getDocuments();
+    // this.getDocuments();
 
   }
   getDocuments(){
