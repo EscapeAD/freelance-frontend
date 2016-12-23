@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AppComponent } from './app.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { DocumentsService } from './documents/documents.service';
 import { ProposalListComponent } from './proposal/proposal-list.component';
 import { ProposalNewComponent } from './proposal/proposal-new.component';
 import { ProposalShowComponent } from './proposal/proposal-show.component';
@@ -15,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule.forRoot() ],
   declarations: [ AppComponent, HomepageComponent, DocumentsComponent, ProposalListComponent, ProposalNewComponent, ProposalShowComponent ],
+  providers: [ DocumentsService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
