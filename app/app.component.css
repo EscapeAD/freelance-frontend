@@ -17,5 +17,6 @@
   color: white;
 }
 .dropdown-links a:hover{
-  background-color: #252830;
+  background-color: white;
+  color: black;
 }
