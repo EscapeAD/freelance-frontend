@@ -1,36 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import { Document } from './document';
+import { DocumentsService } from './documents.service';
 
 @Component({
 moduleId: module.id,
 selector: 'documents',
 templateUrl: 'documents.component.html',
-styleUrls: ['documents.component.css']
+styleUrls: ['documents.component.css'],
+providers: [ DocumentsService ]
 })
-export class DocumentsComponent {
+export class DocumentsComponent implements OnInit {
   pageTitle: string = 'Docs Page'
-  documents: Document[] = [
-    {
-      title: "This is a Test",
-      description: "Test data",
-      file_url: "http://www.google.com",
-      updated_at: "01/01/1010",
-      image_url: "https://placekitten.com/g/300/200"
-    },
-    {
-      title: "DOc 2",
-      description: "Test data",
-      file_url: "http://www.google.com",
-      updated_at: "01/01/1010",
-      image_url: "https://placekitten.com/g/300/200"
-    },
-    {
-      title: "Test Doc 3",
-      description: "Test data",
-      file_url: "http://www.google.com",
-      updated_at: "01/01/1010",
-      image_url: "https://placekitten.com/g/300/200"
-    }
-  ]
+  documents: Document[] = [];
+  errorMessage: string;
+
+  constructor(
+    private documentsService: DocumentsService
+  ){}
+
+  ngOnInit(){
+    // let timer = Observable.timer(0, 5000);
+    // timer.subscribe(() => this.getDocuments())
+    // temp data currently dynamic picture issue
+    this.getDocuments();
+
+  }
+  getDocuments(){
+    this.documentsService.getDocuments()
+        .subscribe(
+          documents => this.documents = documents,
+          errors => this.errorMessage = <any>error
+        )
+  }
 
 }
