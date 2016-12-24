@@ -2,23 +2,22 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
-import { Document } from './document';
+import { Proposal } from './proposal';
 
 @Injectable()
-export class DocumentsService {
-  private documentsUrl = 'http://localhost:3001/freelance_documents.json'
+export class ProposalService {
+  private proposalUrl = 'http://localhost:3002/freelance_proposals.json'
 
   constructor(
     private http: Http
   ){}
 
-  getDocuments(): Observable <Document[]>{
-    return this.http.get(this.documentsUrl)
-                    .map((response: Response) => <Document[]>response.json())
+  getProposal(): Observable<Proposal[]> {
+    return this.http.get(this.proposalUrl)
+                    .map((response: Response) => <Proposal[]>response.json())
                     .catch(this.handleError);
   }
-
-  private handleError(error: Response | any) {
+  private handleError (error: Response | any) {
   // In a real world app, we might use a remote logging infrastructure
   let errMsg: string;
   if (error instanceof Response) {
@@ -30,6 +29,5 @@ export class DocumentsService {
   }
   console.error(errMsg);
   return Observable.throw(errMsg);
-}
-
+  }
 }

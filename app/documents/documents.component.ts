@@ -30,7 +30,7 @@ export class DocumentsComponent implements OnInit {
     this.documentsService.getDocuments()
         .subscribe(
           documents => this.documents = documents,
-          errors => this.errorMessage = <any>error
+          errors => this.errorMessage = <any>errors
         )
   }
 
