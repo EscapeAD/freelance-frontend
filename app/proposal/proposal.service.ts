@@ -6,7 +6,7 @@ import { Proposal } from './proposal';
 
 @Injectable()
 export class ProposalService {
-  private proposalUrl = 'http://localhost:3002/freelance_proposals.json'
+  private proposalUrl = 'http://localhost:3002/proposals.json'
 
   constructor(
     private http: Http
