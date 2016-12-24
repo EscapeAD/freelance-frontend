@@ -7,7 +7,7 @@
     </a>
 
   <span class="list-group-item list-group-item-action" *ngFor='let pro of proposals'>
-    <a  class='pro-link' routerLink='/proposal/{{ pro.id }}'>
+    <a  class='pro-link' (click)="goToShow(pro)">
       <h5 class="list-group-item-heading">{{ pro.customer }}</h5>
       <p class="list-group-item-text">
         {{ pro.hourly_rate * pro.estimated_hours | currency:'USD':true:'.0'}}

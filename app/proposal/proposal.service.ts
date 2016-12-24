@@ -6,20 +6,19 @@ import { Proposal } from './proposal';
 
 @Injectable()
 export class ProposalService {
-  private proposalsUrl = 'http://localhost:3002/proposals.json'
-  private proposalUrl = 'http://localhost:3002/proposals/'
+  private proposalUrl = 'http://localhost:3002/proposals'
 
   constructor(
     private http: Http
   ){}
 
   getProposals(): Observable<Proposal[]> {
-    return this.http.get(this.proposalsUrl)
+    return this.http.get(this.proposalUrl)
                     .map((response: Response) => <Proposal[]>response.json())
                     .catch(this.handleError);
   }
   getProposal(id: number){
-    return this.http.get(this.proposalUrl + id + '.json')
+    return this.http.get(this.proposalUrl + '/' + id )
   }
 
   private handleError (error: Response | any) {
