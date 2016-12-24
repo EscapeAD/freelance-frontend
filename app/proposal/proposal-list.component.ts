@@ -24,10 +24,11 @@ export class ProposalListComponent {
     timer.subscribe(() => this.getProposals())
   }
   getProposals(){
-    this.proposalService.getProposal()
+    this.proposalService.getProposals()
                         .subscribe(
                           proposals => this.proposals = proposals,
                           error => this.errorMessage = <any>error
                         )
   }
+
 }
